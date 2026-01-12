@@ -5,7 +5,7 @@
     "vue": "^3.5.26"
   },
   "scripts": {
-    "site:dev": "vitepress dev",
+    "site:dev": "vitepress dev --host 0.0.0.0",
     "site:build": "vitepress build",
     "site:preview": "vitepress preview"
   }

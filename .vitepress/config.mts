@@ -5,26 +5,60 @@ const vitePressOptions: UserConfig = {
   srcDir: "site",
 
   title: "Studenti Marconi",
+  description: "Sito ufficiale degli Studenti del Marconi",
   lastUpdated: true,
   themeConfig: {
     nav: [
       { text: "Home", link: "/" },
-      { text: "Social", link: "/social.md" },
-      { text: "Chi Siamo", link: "/about.md" },
-      //{ text: "Wiki", link: "/wiki" },
-      { text: "MarconiCraft", link: "/marconicraft" },
-      { text: "Mappa", link: "https://map.studentimarconi.org" },
-      { text: "Apps", link: "https://apps.marconivr.it" },
+      {
+        text: "Info",
+        items: [
+          { text: "Social", link: "/social.md" },
+          { text: "Chi Siamo", link: "/about.md" },
+        ],
+      },
+      {
+        text: "MarconiCraft",
+        activeMatch: "/marconicraft",
+        items: [
+          {
+            text: "Guida",
+            link: "/marconicraft",
+          },
+          {
+            text: "Mappa",
+            link: "https://map.studentimarconi.org",
+          },
+        ],
+      },
+      {
+        text: "Link",
+        items: [
+          { text: "Rappresentanti", link: "https://rappresentantimarconi.eu" },
+          { text: "Apps", link: "https://apps.marconivr.it" },
+        ],
+      },
     ],
     socialLinks: [
       {
         icon: "github",
         link: "https://github.com/StudentiMarconi/StudentiMarconi.github.io",
       },
-      { icon: "signal", link: "https://example.com" },
-      { icon: "discord", link: "https://example.com" },
-      { icon: "telegram", link: "https://example.com" },
-      { icon: "whatsapp", link: "https://example.com" },
+      {
+        icon: "signal",
+        link: "https://signal.group/#CjQKINN9KaMFM9m1KI4s_q-5M2OGp07u0BidSz99GTG7EgSmEhAgc_uDgJbbE_Slj7rqNagx",
+      },
+      { icon: "discord", link: "https://discord.com/invite/jtKkm9Gvg8" },
+      { icon: "telegram", link: "https://t.me/+0pZuisMiqkE4YmRk" },
+      {
+        icon: "whatsapp",
+        link: "https://chat.whatsapp.com/EuSA4tXy1zS2l18D90JZHu",
+      },
+      {
+        icon: "instagram",
+        link: "https://www.instagram.com/rappresentanti_marconivr",
+      },
+      { icon: "reddit", link: "https://www.reddit.com/r/MarconiVerona" },
     ],
     footer: {
       message: "For All Time. Always.",
