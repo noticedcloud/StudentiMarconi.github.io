@@ -8,6 +8,7 @@ import PrimeVue from 'primevue/config';
 import Button from "primevue/button";
 import Lara from '@primeuix/themes/lara';
 import { definePreset } from '@primeuix/themes';
+import 'primeicons/primeicons.css'
 
 const PVTheme = definePreset(Lara, {
     semantic: {
