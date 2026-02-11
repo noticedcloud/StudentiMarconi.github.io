@@ -1,17 +1,24 @@
-// https://vitepress.dev/guide/custom-theme
+// Vue/VitePress
 import { h } from "vue";
 import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
+
+// CSS
 import "./style.css";
 import "./tailwind.css";
+import "./custom.css";
+
+// PrimeVue
 import PrimeVue from "primevue/config";
 import Lara from "@primeuix/themes/lara";
 import { definePreset } from "@primeuix/themes";
 import "primeicons/primeicons.css";
+
+// Custom Components
 import Tutorial from "./components/Tutorial.vue";
 import TutorialStep from "./components/TutorialStep.vue";
-import "./custom.css";
 
+// PrimeVue Theme
 const PVTheme = definePreset(Lara, {
   semantic: {
     primary: {
@@ -30,12 +37,11 @@ const PVTheme = definePreset(Lara, {
   },
 });
 
+// VitePress Theme
 export default {
   extends: DefaultTheme,
   Layout: () => {
-    return h(DefaultTheme.Layout, null, {
-      // https://vitepress.dev/guide/extending-default-theme#layout-slots
-    });
+    return h(DefaultTheme.Layout, null, {});
   },
   enhanceApp({ app, router, siteData }) {
     app.use(PrimeVue, { theme: { preset: PVTheme } });

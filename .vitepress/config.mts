@@ -1,8 +1,16 @@
 import { defineConfig, UserConfig } from "vitepress";
 import { withSidebar } from "vitepress-sidebar";
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from "@tailwindcss/vite";
+
+import { tutorialPlugin } from "./markdown/tutorial";
 
 const vitePressOptions: UserConfig = {
+  markdown: {
+    config(md) {
+      md.use(tutorialPlugin);
+    },
+  },
+
   srcDir: "site",
 
   title: "Studenti Marconi",
@@ -118,13 +126,11 @@ const vitePressOptions: UserConfig = {
     skipToContent: "Vai al contenuto",
   },
   vite: {
-  	resolve: {
-  	  dedupe: ['vue', /^primevue\/.+/]
-  	},
-  	plugins: [
-  		tailwindcss()
-  	]
-  }
+    resolve: {
+      dedupe: ["vue", /^primevue\/.+/],
+    },
+    plugins: [tailwindcss()],
+  },
 };
 
 const vitePressSidebarOptions = [
