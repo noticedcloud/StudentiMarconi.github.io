@@ -21,7 +21,12 @@ const vitePressOptions: UserConfig = {
       { text: "Home", link: "/" },
       {
         text: "Progetti",
-        items: [{ text: "Marconi's Got Talent", link: "/progetti/mgt" }],
+        items: [
+          { text: "Timeline", link: "/progetti/index.md" },
+          { text: "Marconi's Got Talent", link: "/progetti/mgt.md" },
+          { text: "Marconi Chat", link: "/progetti/chat.md" },
+          { text: "Marconi Notes", link: "/progetti/notes.md" },
+        ],
       },
       {
         text: "Info",
@@ -30,25 +35,27 @@ const vitePressOptions: UserConfig = {
           { text: "Chi Siamo", link: "/about.md" },
         ],
       },
-      /*{
+      {
+        text: "Wiki",
+        activeMatch: "/wiki",
+        link: "/wiki/index.md",
+      },
+      {
         text: "MarconiCraft",
         activeMatch: "/marconicraft",
         items: [
-          {
-            text: "Guida",
-            link: "/marconicraft",
-          },
-          {
-            text: "Mappa",
-            link: "https://map.studentimarconi.org",
-          },
+          { text: "Introduzione", link: "/marconicraft/index.md" },
+          { text: "Tutorial", link: "/marconicraft/tutorial.md" },
+          { text: "FAQ", link: "/marconicraft/faq.md" },
+          { text: "Mappa", link: "https://map.studentimarconi.org" },
         ],
-      },*/
+      },
       {
         text: "Link",
         items: [
           { text: "Rappresentanti", link: "https://rappresentantimarconi.eu" },
           { text: "Apps", link: "https://apps.marconivr.it" },
+          { text: "Status", link: "https://status.studentimarconi.org" },
         ],
       },
     ],
@@ -144,6 +151,7 @@ const vitePressSidebarOptions = [
     useFolderTitleFromIndexFile: true,
     useFolderLinkFromIndexFile: true,
     sortMenusByFrontmatterOrder: true,
+    includeRootIndexFile: true,
   },
   {
     documentRootPath: "site",
@@ -155,8 +163,9 @@ const vitePressSidebarOptions = [
     useFolderTitleFromIndexFile: true,
     useFolderLinkFromIndexFile: true,
     sortMenusByFrontmatterOrder: true,
+    includeRootIndexFile: true,
   },
-  /*{
+  {
     documentRootPath: "site",
     scanStartPath: "marconicraft",
     resolvePath: "/marconicraft/",
@@ -166,7 +175,8 @@ const vitePressSidebarOptions = [
     useFolderTitleFromIndexFile: true,
     useFolderLinkFromIndexFile: true,
     sortMenusByFrontmatterOrder: true,
-  },*/
+    includeRootIndexFile: true,
+  },
 ];
 
 export default defineConfig(

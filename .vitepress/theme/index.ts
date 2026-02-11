@@ -44,7 +44,7 @@ export default {
     return h(DefaultTheme.Layout, null, {});
   },
   enhanceApp({ app, router, siteData }) {
-    app.use(PrimeVue, { theme: { preset: PVTheme } });
+    app.use(PrimeVue, { theme: { preset: PVTheme }, ripple: true });
     app.component("Tutorial", Tutorial);
     app.component("TutorialStep", TutorialStep);
   },

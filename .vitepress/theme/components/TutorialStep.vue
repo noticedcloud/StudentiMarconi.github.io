@@ -3,7 +3,9 @@ import StepItem from "primevue/stepitem";
 import Step from "primevue/step";
 import StepPanel from "primevue/steppanel";
 import Button from "primevue/button";
-import { inject, computed, onMounted } from "vue";
+import { inject, computed, onMounted, ref, nextTick } from "vue";
+
+const stepRef = ref(null);
 
 const props = defineProps({
     title: {
@@ -50,14 +52,22 @@ const isLast = computed(() => index.value === tutorial.steps.value.length);
 const prevValue = computed(() => String(tutorial.getBackTarget(index.value)));
 const nextValue = computed(() => String(index.value + 1));
 
-function goTo(target, activateCallback, record = true) {
+async function goTo(target, activateCallback, record = true) {
     if (record) tutorial.recordNavigation(index.value, Number(target));
+
     activateCallback(String(target));
+
+    await nextTick();
+
+    stepRef.value?.$el?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+    });
 }
 </script>
 
 <template>
-    <StepItem :value="String(index)">
+    <StepItem ref="stepRef" :value="String(index)">
         <Step>{{ title }}</Step>
 
         <StepPanel v-slot="{ activateCallback }">
@@ -83,11 +93,13 @@ function goTo(target, activateCallback, record = true) {
                     <Button
                         label="Si"
                         icon="pi pi-check"
+                        severity="success"
                         @click="goTo(nextValue, activateCallback)"
                     />
                     <Button
                         label="No"
                         icon="pi pi-times"
+                        severity="danger"
                         @click="goTo(String(noButton), activateCallback)"
                     />
                 </template>
