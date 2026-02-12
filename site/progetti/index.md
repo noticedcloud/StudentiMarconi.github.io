@@ -2,9 +2,6 @@
 order: 0
 ---
 
-<script setup>
-import Timeline from 'primevue/timeline';
-</script>
+# Progetti
 
-# Timeline
-
+Bro found the unfinished page frfr
