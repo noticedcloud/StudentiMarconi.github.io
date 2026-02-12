@@ -10,7 +10,7 @@ const vitePressOptions: UserConfig = {
       { 
         defer: true,
         src: "https://analytics.studentimarconi.org/script.js",
-        data-website-id: "0f3ba9eb-c2c2-42d0-9c72-de3f4ad11eab"
+        "data-website-id": "0f3ba9eb-c2c2-42d0-9c72-de3f4ad11eab"
       }
     ]
   ],
