@@ -24,7 +24,6 @@ const vitePressOptions: UserConfig = {
         items: [
           //{ text: "Timeline", link: "/progetti/index.md" },
           { text: "Marconi's Got Talent", link: "/progetti/mgt.md" },
-          { text: "Marconi Chat", link: "/progetti/chat.md" },
           { text: "Marconi Notes", link: "/progetti/notes.md" },
         ],
       },
