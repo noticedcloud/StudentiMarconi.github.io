@@ -22,9 +22,8 @@ const vitePressOptions: UserConfig = {
       {
         text: "Progetti",
         items: [
-          //{ text: "Timeline", link: "/progetti/index.md" },
+          { text: "Progetti", link: "/progetti/index.md" },
           { text: "Marconi's Got Talent", link: "/progetti/mgt.md" },
-          { text: "Marconi Notes", link: "/progetti/notes.md" },
         ],
       },
       {
@@ -150,7 +149,7 @@ const vitePressSidebarOptions = [
     useFolderTitleFromIndexFile: true,
     useFolderLinkFromIndexFile: true,
     sortMenusByFrontmatterOrder: true,
-    //includeRootIndexFile: true,
+    includeRootIndexFile: true,
   },
   {
     documentRootPath: "site",
